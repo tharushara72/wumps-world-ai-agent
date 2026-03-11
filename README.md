@@ -1,4 +1,4 @@
-🧠 Wumpus World — Logic-Based Intelligent Agent
+# 🧠 Wumpus World — Logic-Based Intelligent Agent
 
 A Python implementation of the classic Wumpus World environment from AI research, featuring a logic-based intelligent agent that navigates a dangerous grid using knowledge representation and reasoning.
 
