@@ -74,38 +74,7 @@ Avoids any cell not proven safe (conservative policy under uncertainty)
 7. 🎲 Uncertainty & Risk Aversion
 Because the environment is partially observable, the agent cannot directly see pits or the Wumpus. It acts risk-aversely only moving to cells logically guaranteed to be safe. This models a key challenge in AI: acting rationally under uncertainty.
 
-Project Structure
-wumpus-world/
-│
-├── wumps_world.py       # Main simulation file
-│   ├── WumpusWorld      # Environment class (world generation, percepts, game state)
-│   ├── LogicAgent       # Intelligent agent (knowledge base, inference, movement)
-│   └── draw_world()     # Matplotlib visualizer
-│
-└── README.md
-How It Works
-┌─────────────────────────────────────┐
-│           Wumpus World (4×4)        │
-│  P = Pit   W = Wumpus   G = Gold   │
-│  A = Agent                          │
-└─────────────────────────────────────┘
-          │
-          ▼
-  Agent senses percepts
-  (stench / breeze / glitter)
-          │
-          ▼
-  Updates knowledge base
-  (safe cells, frontier)
-          │
-          ▼
-  Selects next safe cell
-  from frontier queue
-          │
-          ▼
-  Moves & checks game state
-  (win / lose / continue)
-Win condition: Agent grabs the gold and returns to (0,0).
-Lose condition: Agent steps into a pit or a living Wumpus's cell.
+ The gold and returns to (0,0).
+ Lose condition: Agent steps into a pit or a living Wumpus's cell.
 
 
