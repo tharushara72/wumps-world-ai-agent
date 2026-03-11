@@ -4,17 +4,17 @@ A Python implementation of the classic Wumpus World environment from AI research
 
 Based on the Wumpus World problem introduced by Gregory Yob (1973) and formalized in Artificial Intelligence: A Modern Approach by Russell & Norvig.
 
-Overview
+## Overview
 
 The Wumpus World is a canonical environment in AI used to illustrate how an intelligent agent can reason under uncertainty using logical inference. The agent must navigate a 4×4 grid, avoid deadly pits and a monster (the Wumpus), and retrieve gold — all without being able to see the full world directly.
 
 This project demonstrates core AI agent design principles through a hands-on simulation with visual output via matplotlib.
 
-Theoretical Concepts
+## Theoretical Concepts
 
 This project serves as a practical showcase of the following AI concepts:
 
-1. 🤖 Intelligent Agents
+## 1. 🤖 Intelligent Agents
    
 An intelligent agent is anything that perceives its environment through sensors and acts upon it through actuators (Russell & Norvig). This implementation follows the standard agent model:
 
@@ -25,7 +25,7 @@ Actuators	move() — navigates cells in the grid
 Agent Function	Maps percept sequences to actions
 Agent Program	LogicAgent class
 
-2. 🌍 PEAS Description
+## 2. 🌍 PEAS Description
    
 The agent is defined using the PEAS framework:
 
@@ -33,7 +33,8 @@ Performance Measure — Grab gold, avoid pits & Wumpus, reach exit
 Environment — 4×4 partially observable grid
 Actuators — Move, grab gold, shoot arrow
 Sensors — Stench, breeze, glitter, bump, scream
-3. 🔍 Environment Properties
+
+## 3. 🔍 Environment Properties
 The Wumpus World exhibits several classic environment characteristics:
 
 Property	Value
@@ -45,7 +46,8 @@ Static vs Dynamic	Static
 Discrete vs Continuous	Discrete
 Single vs Multi-agent	Single agent
 
-4. 🧩 Knowledge Representation
+
+## 4. 🧩 Knowledge Representation
 The agent maintains an internal knowledge base representing:
 
 Cells confirmed safe (no pit, no Wumpus)
@@ -53,7 +55,7 @@ Cells visited (already explored)
 A frontier of candidate safe cells to explore next
 This is a simplified form of propositional logic reasoning — the agent infers safety from the absence of percepts (no breeze → no adjacent pit).
 
-5. 🔗 Logical Inference — Modus Ponens
+## 5. 🔗 Logical Inference — Modus Ponens
 The core reasoning rule applied:
 
 IF current cell has no breeze AND no stench
@@ -64,14 +66,14 @@ P = "No breeze detected at position (x, y)"
 P → Q = "No breeze implies no adjacent pits"
 ∴ Q = "Adjacent cells are safe to visit"
 
-6. 🗺️ Search & Planning
+## 6. 🗺️ Search & Planning
 The agent uses a frontier-based exploration strategy:
 
 Maintains a queue of known-safe, unvisited cells
 Visits cells in FIFO order (breadth-first style exploration)
 Avoids any cell not proven safe (conservative policy under uncertainty)
 
-7. 🎲 Uncertainty & Risk Aversion
+## 7. 🎲 Uncertainty & Risk Aversion
 Because the environment is partially observable, the agent cannot directly see pits or the Wumpus. It acts risk-aversely only moving to cells logically guaranteed to be safe. This models a key challenge in AI: acting rationally under uncertainty.
 
  The gold and returns to (0,0).
